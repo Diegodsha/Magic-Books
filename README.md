@@ -36,7 +36,7 @@
 
 ## Live Demo
 
-Visit [Magic-books]()
+Visit [Magic-books](https://magic-books-r.herokuapp.com/)
 
 ## Prerequisites
 
