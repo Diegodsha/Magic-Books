@@ -1,54 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import Book from '../Components/Book';
 
-const BookList = ({ books }) => {
-  const store = useSelector((state) => state);
-  const dispatch = useDispatch();
+const BookList = () => {
+  const books = useSelector((state) => state.bookReducer);
 
   return (
-    <table className="table table-dark table-hover">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Title</th>
-          <th scope="col">Category</th>
-        </tr>
-      </thead>
-      <tbody>
-        {books.map((book) => (
-          <tr key={book.id}>
-            <th scope="row">{book.id}</th>
-            <td>{book.title}</td>
-            <td>{book.category}</td>
+    <div className="col-8 mt-4">
+      <table className="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Category</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {books.map((book) => (
+            <Book key={book.id} book={book} />
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
-
-BookList.propTypes = {
-  books: PropTypes.array,
-};
-
-BookList.defaultProps = {
-  books: [
-    {
-      id: 1,
-      title: 'Book title',
-      category: 'Book Category',
-    },
-  ],
-};
-
-// const mapStateToProps = (state) => ({ books: state.books });
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     submitNewBook: (book) => {
-//       dispatch(addBook(book));
-//     },
-//   };
-// };
 
 export default BookList;
