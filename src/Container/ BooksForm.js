@@ -93,3 +93,4 @@ const BookForm = () => {
 };
 
 export default BookForm;
+export { categories };
