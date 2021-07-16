@@ -46,7 +46,7 @@ const BookForm = () => {
   };
 
   return (
-    <form className="col-8">
+    <form onSubmit={handleSubmit} className="col-8">
       <div className="alert alert-warning alert-dismissible fade position-absolute top-0" role="alert">
         <strong>Holy guacamole! </strong>
         You should give a name to your book.
@@ -85,7 +85,7 @@ const BookForm = () => {
         </select>
       </div>
 
-      <button onClick={handleSubmit} type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-primary">
         Add book
       </button>
     </form>
