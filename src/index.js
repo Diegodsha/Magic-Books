@@ -5,8 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import App from './Components/App';
 import rootReducer from './Reducers/index';
-
-const idGenerator = () => Math.floor(Math.random() * 500);
+import idGenerator from './Helpers/IdGenerator';
 
 const bookReducer = [
   {
@@ -28,7 +27,12 @@ const bookReducer = [
 
 const intialState = { bookReducer };
 
-const store = createStore(rootReducer, intialState);
+const store = createStore(
+  rootReducer,
+  intialState,
+  // eslint-disable-next-line no-underscore-dangle
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 ReactDOM.render(
   <Provider store={store}>
