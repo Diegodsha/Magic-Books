@@ -46,7 +46,7 @@ const BookForm = () => {
   };
 
   return (
-    <form className="col-8">
+    <form onSubmit={handleSubmit} className="col-8">
       <div className="mb-3">
         <label htmlFor="bookTitle" className="form-label">
           Book title
@@ -75,7 +75,7 @@ const BookForm = () => {
         </select>
       </div>
 
-      <button onClick={handleSubmit} type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-primary">
         Add book
       </button>
     </form>
