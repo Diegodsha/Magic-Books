@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import { categories } from '../Container/ BooksForm';
 
-const CategoryFilter = () => (
+const CategoryFilter = ({ handleFilterChange }) => (
   <select
-    // onChange={handleChange}
+    onChange={handleFilterChange}
     id="bookCategoryFilter"
     className="form-select"
     aria-label="Default select example"
@@ -15,5 +16,9 @@ const CategoryFilter = () => (
     ))}
   </select>
 );
+
+CategoryFilter.propTypes = {
+  handleFilterChange: PropTypes.func.isRequired,
+};
 
 export default CategoryFilter;
