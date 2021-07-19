@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { devToolsEnhancer } from 'redux-devtools-extension/logOnlyInProduction';
+import { devToolsEnhancer } from 'redux-devtools-extension';
 import App from './Components/App';
 import rootReducer from './Reducers/index';
 import idGenerator from './Helpers/IdGenerator';

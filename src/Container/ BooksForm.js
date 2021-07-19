@@ -47,16 +47,6 @@ const BookForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="col-8">
-      <div className="alert alert-warning alert-dismissible fade position-absolute top-0" role="alert">
-        <strong>Holy guacamole! </strong>
-        You should give a name to your book.
-        <button
-          type="button"
-          className="btn-close"
-          data-bs-dismiss="alert"
-          aria-label="Close"
-        />
-      </div>
       <div className="mb-3">
         <label htmlFor="bookTitle" className="form-label">
           Book title
@@ -93,3 +83,4 @@ const BookForm = () => {
 };
 
 export default BookForm;
+export { categories };
