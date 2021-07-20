@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createAction } from '../Actions/index';
-import idGenerator from '../Helpers/IdGenerator';
+import idGenerator from '../Helpers/helpers';
 
 const categories = [
   'Action',
@@ -46,7 +46,7 @@ const BookForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="col-8">
+    <form onSubmit={handleSubmit} className="col-12">
       <div className="mb-3">
         <label htmlFor="bookTitle" className="form-label">
           Book title
