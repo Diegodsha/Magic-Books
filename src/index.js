@@ -6,7 +6,7 @@ import { createStore } from 'redux';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import App from './Components/App';
 import rootReducer from './Reducers/index';
-import idGenerator from './Helpers/IdGenerator';
+import idGenerator from './Helpers/helpers';
 
 const bookReducer = [
   {
