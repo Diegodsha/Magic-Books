@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { BookCol } from '../StyledComponents/styles';
+// import { randNum } from '../Helpers/helpers';
 
 const Book = ({ book, removeBook }) => (
   <BookCol className="col-12 my-2">
@@ -31,9 +32,16 @@ const Book = ({ book, removeBook }) => (
       </div>
       <div className="col-12 col-md-7 content">
         <div className="percentage d-flex align-items-center">
-          <CircularProgressbar className="prog-svg" value={5} text={`${5}%`} />
+          <CircularProgressbar
+            className="prog-svg"
+            value={book.progress}
+            text={`${book.progress}%`}
+          />
           <div className="d-flex flex-column ">
-            <span className="read-percentage">0%</span>
+            <span className="read-percentage">
+              {book.progress}
+              %
+            </span>
             <span className="completed">Completed</span>
           </div>
         </div>
@@ -56,6 +64,7 @@ Book.propTypes = {
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
+    progress: PropTypes.string.isRequired,
   }).isRequired,
   removeBook: PropTypes.func.isRequired,
 };

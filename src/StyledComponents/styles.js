@@ -51,7 +51,6 @@ const BookCol = styled.div`
   border-radius: 4px;
   min-height: 10.625rem;
   padding: 2rem 7.438rem 1.625rem 1.688rem;
-  /* margin: .938rem 6.25rem 0 6.25rem; */
   .book-category {
     margin: 0 4rem 0 0;
     opacity: 0.5;

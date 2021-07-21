@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createAction } from '../Actions/index';
-import idGenerator from '../Helpers/helpers';
+import { idGenerator } from '../Helpers/helpers';
 
 const categories = [
   'Action',
