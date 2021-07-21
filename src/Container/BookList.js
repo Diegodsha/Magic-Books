@@ -16,7 +16,7 @@ const BookList = () => {
 
   return (
     <div className="container-fluid p-2 p-md-5">
-      <CategoryFilter handleFilterChange={handleFilterChange} />
+      <CategoryFilter style={{ width: '15%' }} handleFilterChange={handleFilterChange} />
       <div className="row g-0">
         {books
           .filter((book) => book.category === filter || filter === 'All')

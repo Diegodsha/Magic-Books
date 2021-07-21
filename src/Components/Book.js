@@ -29,18 +29,18 @@ const Book = ({ book, removeBook }) => (
           <span className="edit edit-book ps-3">Edit</span>
         </div>
       </div>
-      <div className="col-12 col-md-8 content">
-        <div className="percentage d-flex">
-          <CircularProgressbar value={5} text={`${5}%`} />
+      <div className="col-12 col-md-7 content">
+        <div className="percentage d-flex align-items-center">
+          <CircularProgressbar className="prog-svg" value={5} text={`${5}%`} />
           <div className="d-flex flex-column ">
-            <span>0%</span>
-            <span>Completed</span>
+            <span className="read-percentage">0%</span>
+            <span className="completed">Completed</span>
           </div>
         </div>
-        <span className="divider" />
-        <div className="d-flex flex-column">
-          <span className="chapter">CURRENT CHAPTER</span>
-          <span>Chapter</span>
+        <span className="divider align-self-center" />
+        <div className="d-flex flex-column justify-content-center">
+          <span className="current-chapter">CURRENT CHAPTER</span>
+          <span className="chapter">Chapter 15</span>
           <button className="update-btn" type="button">
             UPDATE PROGRESS
           </button>
