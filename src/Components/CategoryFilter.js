@@ -5,7 +5,7 @@ const CategoryFilter = ({ handleFilterChange }) => (
   <select
     onChange={handleFilterChange}
     id="bookCategoryFilter"
-    className="form-select"
+    className="form-select w-25"
     aria-label="Default select example"
   >
     <option defaultValue>All</option>

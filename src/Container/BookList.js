@@ -15,26 +15,15 @@ const BookList = () => {
   };
 
   return (
-    <div className="col-8 mt-4">
-      <table className="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Title</th>
-            <th scope="col">
-              <CategoryFilter handleFilterChange={handleFilterChange} />
-            </th>
-            <th scope="col"> </th>
-          </tr>
-        </thead>
-        <tbody>
-          {books
-            .filter((book) => book.category === filter || filter === 'All')
-            .map((book) => (
-              <Book key={book.id} book={book} removeBook={handleRemoveBook} />
-            ))}
-        </tbody>
-      </table>
+    <div className="container-fluid p-2 px-md-5 py-2 py-md-4">
+      <CategoryFilter style={{ width: '15%' }} handleFilterChange={handleFilterChange} />
+      <div className="row g-0">
+        {books
+          .filter((book) => book.category === filter || filter === 'All')
+          .map((book) => (
+            <Book key={book.id} book={book} removeBook={handleRemoveBook} />
+          ))}
+      </div>
     </div>
   );
 };

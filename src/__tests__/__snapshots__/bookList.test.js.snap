@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Booklist Component Renders correctly component 1`] = `
+<nav
+  className="sc-bdnxRM kzbeFG navbar navbar-expand-lg navbar-light"
+>
+  <div
+    className="container-fluid"
+  >
+    <a
+      className="navbar-brand"
+      href="#root"
+    >
+      Bookstore CMS
+    </a>
+    <button
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler"
+      data-bs-target="#navbarNav"
+      data-bs-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse"
+      id="navbarNav"
+    >
+      <ul
+        className="navbar-nav w-100 justify-content-between"
+      >
+        <li
+          className="nav-item d-lg-flex"
+        >
+          <a
+            aria-current="page"
+            className="nav-link active mx-3 books p-0"
+            href="#root"
+          >
+            BOOKS
+          </a>
+          <a
+            className="nav-link categories mx-3 p-0"
+            href="#root"
+          >
+            CATEGORIES
+          </a>
+        </li>
+        <li
+          className="nav-item me-4 person-icon mx-3 rounded-circle"
+        >
+          <a
+            className="nav-link"
+            href="#root"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              version="1.1"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 11.041v-0.825c1.102-0.621 2-2.168 2-3.716 0-2.485 0-4.5-3-4.5s-3 2.015-3 4.5c0 1.548 0.898 3.095 2 3.716v0.825c-3.392 0.277-6 1.944-6 3.959h14c0-2.015-2.608-3.682-6-3.959z"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;

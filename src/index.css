@@ -1,5 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;600&display=swap');
 
 body {
-  font-family: Nunito, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.backColor {
+  background: #f5f6fa;
+}
+
+#root {
+  box-shadow: 34px 43px 86px -9px gray;
+  font-family: 'Roboto Slab', sans-serif;
+  max-width: 1500px;
+}
+
+nav {
+  font-family: Montserrat, sans-serif;
+  background-color: white;
 }

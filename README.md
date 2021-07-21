@@ -16,6 +16,11 @@
 
 ## Sneak peak
 
+![bookCMS](https://user-images.githubusercontent.com/70416006/126543408-69be5170-a568-450f-b8ef-b39448c06519.png)
+
+![bookCMS-tablet](https://user-images.githubusercontent.com/70416006/126543405-320f7fdf-e9fc-4ef4-ba74-ee65fb7f865d.png)
+![bookCMS-mobile](https://user-images.githubusercontent.com/70416006/126551439-94f22577-abc9-48bf-9631-f267d553952a.png)
+
 
 ## Built With
 
