@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createAction } from '../Actions/index';
-import { idGenerator } from '../Helpers/helpers';
+import { idGenerator, randNum } from '../Helpers/helpers';
 
 const categories = [
   'Action',
@@ -41,7 +41,7 @@ const BookForm = () => {
       return;
     }
 
-    dispatch(createAction({ ...Book, id: idGenerator() }));
+    dispatch(createAction({ ...Book, id: idGenerator(), progress: randNum() }));
     setBook((state) => ({ ...state, title: '', category: '' }));
   };
 
@@ -49,13 +49,14 @@ const BookForm = () => {
     <form onSubmit={handleSubmit} className="col-12">
       <div className="mb-3">
         <label htmlFor="bookTitle" className="form-label">
-          Book title
+          ADD NEW BOOK
         </label>
         <input
           type="text"
           className="form-control"
           id="bookTitle"
           value={Book.title}
+          placeholder="Book title"
           onChange={handleChange}
         />
       </div>
