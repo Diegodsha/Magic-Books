@@ -47,12 +47,12 @@ const StyledNav = styled.nav`
 `;
 
 const BookCol = styled.div`
+  background-color: white;
   border: 1px solid #e8e8e8;
   border-radius: 4px;
   min-height: 10.625rem;
-  padding: 2rem 7.438rem 1.625rem 1.688rem;
+  padding: 2rem 4.438rem 1.625rem 1.688rem;
   .book-category {
-    margin: 0 4rem 0 0;
     opacity: 0.5;
     font-family: Montserrat, sans-serif;
     font-size: 0.875rem;
@@ -60,7 +60,7 @@ const BookCol = styled.div`
   }
 
   .book-title {
-    margin: 0.188rem 2.125rem 0 0;
+    margin: 0.188rem 0 0 0;
     font-size: 1.375rem;
     font-weight: bold;
     letter-spacing: -0.2px;
@@ -70,6 +70,9 @@ const BookCol = styled.div`
     font-size: 0.875rem;
     font-weight: 300;
     color: #4386bf;
+    & a{
+      color: #4386bf;
+    }
   }
 
   .remove {
@@ -110,7 +113,6 @@ const BookCol = styled.div`
   .update-btn {
     margin: 0.75rem 0 0.563rem 0;
     width: 11.5rem;
-
     height: 2.063rem;
     padding: 0.438rem 1.188rem 0.5rem 1.375rem;
     border-radius: 3px;
@@ -127,20 +129,19 @@ const BookCol = styled.div`
   }
 
   .current-chapter {
-    margin: 0.063rem 3.625rem 0 0;
     opacity: 0.5;
     font-size: 0.813rem;
     font-weight: 300;
   }
 
   .chapter {
-    margin: 0.438rem 6.813rem 0.25rem 0;
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: -0.4px;
   }
 
   @media only screen and (max-width: 766px) {
+    padding: 2rem 3.438rem 1.625rem 1.688rem;
     .prog-svg {
       width: 9.625rem;
       height: 9.62rem;
@@ -148,4 +149,41 @@ const BookCol = styled.div`
   }
 `;
 
-export { StyledNav, BookCol };
+const StyledForm = styled.form`
+  .add-book {
+    font-family: Montserrat;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: -0.18px;
+    color: #888888;
+  }
+
+  #bookTitle {
+    border-radius: 4px;
+    border: solid 1px #e8e8e8;
+    
+    &::placeholder{
+      color: #c4c4c4;
+    }
+  }
+
+  #bookCategory{
+    border-radius: 4px;
+    border: solid 1px #e8e8e8;
+  }
+
+  .form-select{
+    color: #c4c4c4;
+  }
+  .btn{
+    height: 2.5rem;
+  }
+
+  @media only screen and (max-width: 400px) {
+    .btn{
+    font-size: 13px;
+  }
+  }
+`;
+
+export { StyledNav, BookCol, StyledForm };

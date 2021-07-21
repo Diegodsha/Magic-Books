@@ -9,15 +9,15 @@ const Book = ({ book, removeBook }) => (
   <BookCol className="col-12 my-2">
     <div className="row justify-content-between align-items-center">
       <div className="col-12 col-md-4">
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column align-items-center align-items-md-start">
           <span className="book-category">{book.category}</span>
           <span className="book-title">{book.title}</span>
           <span className="book-author edit-book mb-2">
             {book.author ?? 'Author'}
           </span>
         </div>
-        <div>
-          <span className="comments edit-book pe-3">Comments</span>
+        <div className="d-flex justify-content-center justify-content-md-start">
+          <span className="comments edit-book pe-3"><a className="text-decoration-none" href="#Comments">Comments</a></span>
           <span>
             <button
               className="remove edit-book px-3"
@@ -27,31 +27,34 @@ const Book = ({ book, removeBook }) => (
               Remove
             </button>
           </span>
-          <span className="edit edit-book ps-3">Edit</span>
+          <span className="edit edit-book ps-3"><a className="text-decoration-none" href="#Edit">Edit</a></span>
         </div>
       </div>
       <div className="col-12 col-md-7 content">
-        <div className="percentage d-flex align-items-center">
-          <CircularProgressbar
-            className="prog-svg"
-            value={book.progress}
-            text={`${book.progress}%`}
-          />
-          <div className="d-flex flex-column ">
-            <span className="read-percentage">
-              {book.progress}
-              %
+        <div className="row m-0 p-0 w-100">
+          <div className="percentage d-flex align-items-center col-12 col-lg-7 justify-content-center my-4 my-md-0">
+            <span className="prog-svg">
+              <CircularProgressbar
+                value={book.progress}
+                text={`${book.progress}%`}
+              />
             </span>
-            <span className="completed">Completed</span>
+            <div className="d-flex flex-column ">
+              <span className="read-percentage">
+                {book.progress}
+                %
+              </span>
+              <span className="completed ">Completed</span>
+            </div>
           </div>
-        </div>
-        <span className="divider align-self-center" />
-        <div className="d-flex flex-column justify-content-center">
-          <span className="current-chapter">CURRENT CHAPTER</span>
-          <span className="chapter">Chapter 15</span>
-          <button className="update-btn" type="button">
-            UPDATE PROGRESS
-          </button>
+          <span className="divider align-self-center p-0 d-none d-lg-block" />
+          <div className="d-flex flex-column justify-content-center col-12 col-lg-4 align-items-center align-items-lg-start">
+            <span className="current-chapter">CURRENT CHAPTER</span>
+            <span className="chapter">Chapter 15</span>
+            <button className="update-btn" type="button">
+              UPDATE PROGRESS
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -64,7 +67,7 @@ Book.propTypes = {
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
-    progress: PropTypes.string.isRequired,
+    progress: PropTypes.number.isRequired,
   }).isRequired,
   removeBook: PropTypes.func.isRequired,
 };
