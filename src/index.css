@@ -10,11 +10,13 @@ body {
 }
 
 #root {
-  background-color: white;
+  background-color: #f5f6fa;
   box-shadow: 34px 43px 86px -9px gray;
   font-family: 'Roboto Slab', sans-serif;
+  max-width: 1500px;
 }
 
 nav {
   font-family: Montserrat, sans-serif;
+  background-color: white;
 }
