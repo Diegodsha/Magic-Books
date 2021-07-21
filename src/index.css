@@ -2,15 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;600&display=swap');
 
 body {
-  background: #f5f6fa;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
 }
 
+.backColor {
+  background: #f5f6fa;
+}
+
 #root {
-  background-color: #f5f6fa;
   box-shadow: 34px 43px 86px -9px gray;
   font-family: 'Roboto Slab', sans-serif;
   max-width: 1500px;
