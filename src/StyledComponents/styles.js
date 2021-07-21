@@ -44,6 +44,13 @@ const StyledNav = styled.nav`
     width: 15rem;
     font-weight: bold;
   }
+
+  @media only screen and (max-width: 500px) {
+    .navbar-brand {
+      font-size: 1.25rem;
+      width: 10rem;
+    }
+  }
 `;
 
 const BookCol = styled.div`
@@ -70,7 +77,7 @@ const BookCol = styled.div`
     font-size: 0.875rem;
     font-weight: 300;
     color: #4386bf;
-    & a{
+    & a {
       color: #4386bf;
     }
   }
@@ -161,28 +168,28 @@ const StyledForm = styled.form`
   #bookTitle {
     border-radius: 4px;
     border: solid 1px #e8e8e8;
-    
-    &::placeholder{
+
+    &::placeholder {
       color: #c4c4c4;
     }
   }
 
-  #bookCategory{
+  #bookCategory {
     border-radius: 4px;
     border: solid 1px #e8e8e8;
   }
 
-  .form-select{
+  .form-select {
     color: #c4c4c4;
   }
-  .btn{
+  .btn {
     height: 2.5rem;
   }
 
   @media only screen and (max-width: 400px) {
-    .btn{
-    font-size: 13px;
-  }
+    .btn {
+      font-size: 13px;
+    }
   }
 `;
 
