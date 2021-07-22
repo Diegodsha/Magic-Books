@@ -1,9 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createAction } from '../Actions/index';
-import { idGenerator, randNum } from '../Helpers/helpers';
+// import { createAction } from '../Actions/index';
+import { saveBook } from '../Actions/index';
+// import { idGenerator, randNum } from '../Helpers/helpers';
 import { StyledForm } from '../StyledComponents/styles';
+// import { API_URL, getBooks, createBook } from './api/api';
+// import { createBook } from '../api/api';
 
 const categories = [
   'Action',
@@ -32,13 +35,12 @@ const BookForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (Book.category === '') {
       return;
     }
-
-    dispatch(createAction({ ...Book, id: idGenerator(), progress: randNum() }));
+    dispatch(saveBook(Book));
     setBook((state) => ({ ...state, title: '', category: '' }));
   };
 

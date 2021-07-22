@@ -13,7 +13,7 @@ const Book = ({ book, removeBook }) => (
           <span className="book-category">{book.category}</span>
           <span className="book-title">{book.title}</span>
           <span className="book-author edit-book mb-2">
-            {book.author ?? 'Author'}
+            {book.author ?? 'Add Author'}
           </span>
         </div>
         <div className="d-flex justify-content-center justify-content-md-start">
@@ -35,13 +35,13 @@ const Book = ({ book, removeBook }) => (
           <div className="percentage d-flex align-items-center col-12 col-lg-7 justify-content-center my-4 my-md-0">
             <span className="prog-svg">
               <CircularProgressbar
-                value={book.progress}
-                text={`${book.progress}%`}
+                value={book.progress ?? 0}
+                text={`${book.progress ?? 0}%`}
               />
             </span>
             <div className="d-flex flex-column ">
               <span className="read-percentage">
-                {book.progress}
+                {book.progress ?? 0}
                 %
               </span>
               <span className="completed ">Completed</span>
@@ -50,7 +50,11 @@ const Book = ({ book, removeBook }) => (
           <span className="divider align-self-center p-0 d-none d-lg-block" />
           <div className="d-flex flex-column justify-content-center col-12 col-lg-4 align-items-center align-items-lg-start">
             <span className="current-chapter">CURRENT CHAPTER</span>
-            <span className="chapter">Chapter 15</span>
+            <span className="chapter">
+              Chapter
+              {' '}
+              {book.chapter ?? 0}
+            </span>
             <button className="update-btn" type="button">
               UPDATE PROGRESS
             </button>
@@ -66,8 +70,9 @@ Book.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    progress: PropTypes.number.isRequired,
+    author: PropTypes.string,
+    chapter: PropTypes.number,
+    progress: PropTypes.number,
   }).isRequired,
   removeBook: PropTypes.func.isRequired,
 };
