@@ -1,22 +1,34 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import Book from '../Components/Book';
-import { filterAction, removeAction } from '../Actions/index';
+import {
+  filterAction,
+  removeBook,
+  fetchBooks,
+} from '../Actions/index';
 import CategoryFilter from '../Components/CategoryFilter';
 
 const BookList = () => {
   const books = useSelector((state) => state.bookReducer);
   const dispatch = useDispatch();
   const handleRemoveBook = (book) => {
-    dispatch(removeAction(book));
+    dispatch(removeBook(book));
   };
   const filter = useSelector((state) => state.filterReducer);
   const handleFilterChange = (e) => {
     dispatch(filterAction(e.target.value));
   };
 
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
   return (
     <div className="container-fluid p-2 px-md-5 py-2 py-md-4">
-      <CategoryFilter style={{ width: '15%' }} handleFilterChange={handleFilterChange} />
+      <CategoryFilter
+        style={{ width: '15%' }}
+        handleFilterChange={handleFilterChange}
+      />
       <div className="row g-0">
         {books
           .filter((book) => book.category === filter || filter === 'All')
