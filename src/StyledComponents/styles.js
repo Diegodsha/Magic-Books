@@ -186,7 +186,13 @@ const StyledForm = styled.form`
     height: 2.5rem;
   }
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 600px) {
+    .btn {
+      font-size: 13px;
+    }
+  }
+
+    @media only screen and (max-width: 410px) {
     .btn {
       font-size: 10px;
     }

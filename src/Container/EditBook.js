@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
@@ -23,15 +24,15 @@ const EditBook = ({ match }) => {
     let title = '';
     let category = '';
     let author = '';
-    if (e.target.id === 'bookTitle') {
+    if (e.target.id === 'bookTitle' && e.target.value !== '') {
       title = e.target.value;
       setBook((state) => ({ ...state, title }));
     }
-    if (e.target.id === 'bookCategory') {
+    if (e.target.id === 'bookCategory' && e.target.value !== '') {
       category = e.target.value;
       setBook((state) => ({ ...state, category }));
     }
-    if (e.target.id === 'bookAuthor') {
+    if (e.target.id === 'bookAuthor' && e.target.value !== '') {
       author = e.target.value;
       setBook((state) => ({ ...state, author }));
     }
@@ -62,7 +63,7 @@ const EditBook = ({ match }) => {
         className="row p-2 px-md-5 py-2 py-md-4"
       >
         <div className=" add-book">EDIT BOOK</div>
-        <div className="col-5 mb-3">
+        <div className="col-12 col-md-6 mb-3">
           <input
             type="text"
             className="form-control"
@@ -74,7 +75,7 @@ const EditBook = ({ match }) => {
           />
           <input
             type="text"
-            className="form-control"
+            className="form-control mt-3"
             id="bookAuthor"
             value={Book.author}
             placeholder="Book Author"
@@ -82,7 +83,7 @@ const EditBook = ({ match }) => {
             onChange={handleChange}
           />
         </div>
-        <div className=" col-4 mb-3">
+        <div className=" col-12 col-md-6 mb-3">
           <select
             onChange={handleChange}
             id="bookCategory"
@@ -98,13 +99,15 @@ const EditBook = ({ match }) => {
           </select>
         </div>
 
-        <button type="submit" className="btn btn-primary col-3">
+        <button type="submit" className="btn btn-primary col-5 m-auto">
           Update book
         </button>
+        <Link to="/" className="text-white text-decoration-none col-5 m-auto">
+          <button type="button" className="btn btn-primary w-100">
+            Home
+          </button>
+        </Link>
       </StyledForm>
-      <button type="button">
-        <Link to="/">Home</Link>
-      </button>
     </>
   );
 };

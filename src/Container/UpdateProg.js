@@ -22,9 +22,8 @@ const UpdateProg = ({ match }) => {
   const handleChange = (e) => {
     let progress = '';
     let chapter = '';
-    if (e.target.id === 'bookProgress') {
+    if (e.target.id === 'bookProgress' && e.target.id !== '') {
       progress = e.target.value;
-      console.log(progress);
       setBook((state) => ({ ...state, progress }));
     }
     if (e.target.id === 'bookChapter') {
@@ -59,7 +58,7 @@ const UpdateProg = ({ match }) => {
         className="row p-2 px-md-5 py-2 py-md-4"
       >
         <div className=" add-book">UPDATE PROGRESS</div>
-        <div className="col-5 mb-3">
+        <div className="col-12 mb-3 p-0">
           <input
             type="number"
             min="0"
@@ -73,7 +72,7 @@ const UpdateProg = ({ match }) => {
           />
           <input
             type="number"
-            className="form-control"
+            className="form-control mt-3"
             id="bookChapter"
             value={Book.author}
             placeholder="Book chapter"
@@ -81,13 +80,15 @@ const UpdateProg = ({ match }) => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className="btn btn-primary col-3">
+        <button type="submit" className="btn btn-primary col-5">
           Update Progress
         </button>
+        <Link to="/" className="text-white text-decoration-none col-5">
+          <button type="button" className="btn btn-primary w-100">
+            Home
+          </button>
+        </Link>
       </StyledForm>
-      <button type="button">
-        <Link to="/">Home</Link>
-      </button>
     </>
   );
 };
