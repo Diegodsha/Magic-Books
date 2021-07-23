@@ -1,9 +1,10 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { Link } from 'react-router-dom';
 import { BookCol } from '../StyledComponents/styles';
-// import { randNum } from '../Helpers/helpers';
 
 const Book = ({ book, removeBook }) => (
   <BookCol className="col-12 my-2">
@@ -17,7 +18,11 @@ const Book = ({ book, removeBook }) => (
           </span>
         </div>
         <div className="d-flex justify-content-center justify-content-md-start">
-          <span className="comments edit-book pe-3"><a className="text-decoration-none" href="#Comments">Comments</a></span>
+          <span className="comments edit-book pe-3">
+            <a className="text-decoration-none" href="#Comments">
+              Comments
+            </a>
+          </span>
           <span>
             <button
               className="remove edit-book px-3"
@@ -27,7 +32,13 @@ const Book = ({ book, removeBook }) => (
               Remove
             </button>
           </span>
-          <span className="edit edit-book ps-3"><a className="text-decoration-none" href="#Edit">Edit</a></span>
+          <Link
+            to={`/edit/${book.id}`}
+            book={book}
+            className="text-decoration-none"
+          >
+            <span className="edit edit-book ps-3">Edit</span>
+          </Link>
         </div>
       </div>
       <div className="col-12 col-md-7 content">
@@ -40,24 +51,19 @@ const Book = ({ book, removeBook }) => (
               />
             </span>
             <div className="d-flex flex-column ">
-              <span className="read-percentage">
-                {book.progress ?? 0}
-                %
-              </span>
+              <span className="read-percentage">{book.progress ?? 0}%</span>
               <span className="completed ">Completed</span>
             </div>
           </div>
           <span className="divider align-self-center p-0 d-none d-lg-block" />
           <div className="d-flex flex-column justify-content-center col-12 col-lg-4 align-items-center align-items-lg-start">
             <span className="current-chapter">CURRENT CHAPTER</span>
-            <span className="chapter">
-              Chapter
-              {' '}
-              {book.chapter ?? 0}
-            </span>
-            <button className="update-btn" type="button">
-              UPDATE PROGRESS
-            </button>
+            <span className="chapter">Chapter {book.chapter ?? 0}</span>
+            <Link to={`/update/${book.id}`}>
+              <button className="update-btn" type="button">
+                UPDATE PROGRESS
+              </button>
+            </Link>
           </div>
         </div>
       </div>
