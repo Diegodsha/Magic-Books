@@ -1,4 +1,5 @@
-import { getBooks, createBook, deleteBook } from '../api/api';
+// eslint-disable-next-line object-curly-newline
+import { getBooks, createBook, deleteBook, editBook } from '../api/api';
 
 export const fetchAction = (books) => ({
   type: 'FETCH_BOOKS',
@@ -12,6 +13,11 @@ export const createAction = (book) => ({
 
 export const removeAction = (book) => ({
   type: 'REMOVE_BOOK',
+  book,
+});
+
+export const updateAction = (book) => ({
+  type: 'UPDATE_BOOK',
   book,
 });
 
@@ -33,4 +39,9 @@ export const saveBook = (Book) => async (dispatch) => {
 export const removeBook = (Book) => async (dispatch) => {
   await deleteBook(Book);
   dispatch(removeAction(Book));
+};
+
+export const updateBook = (id, Book) => async (dispatch) => {
+  await editBook(id, Book);
+  dispatch(updateAction(Book));
 };

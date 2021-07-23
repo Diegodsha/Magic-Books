@@ -17,7 +17,10 @@ const deleteBook = async (book) => {
   return res;
 };
 
-const editBook = (id, params) => axios.put(`${API_URL}/${id}`, params);
+const editBook = async (id, update) => {
+  const res = await axios.put(`${API_URL}/${id}`, update);
+  return res;
+};
 
 // eslint-disable-next-line object-curly-newline
 export { API_URL, getBooks, createBook, editBook, deleteBook };
