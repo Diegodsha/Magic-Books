@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App justify-content-center row ">
       <Nav />
-      <BookList />
+      <BookList render={0} />
       <BookForm />
     </div>
   );

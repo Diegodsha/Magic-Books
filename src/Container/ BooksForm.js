@@ -1,12 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { createAction } from '../Actions/index';
 import { saveBook } from '../Actions/index';
-// import { idGenerator, randNum } from '../Helpers/helpers';
 import { StyledForm } from '../StyledComponents/styles';
-// import { API_URL, getBooks, createBook } from './api/api';
-// import { createBook } from '../api/api';
 
 const categories = [
   'Action',

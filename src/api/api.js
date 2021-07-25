@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/api/v1/books';
+// const LOCAL_API_URL = 'http://localhost:3001/api/v1/books';
+const API_URL = 'https://magic-book-api.herokuapp.com/api/v1/books';
 
 const getBooks = async () => {
   const res = await axios.get(API_URL);
@@ -22,5 +23,10 @@ const editBook = async (id, update) => {
   return res;
 };
 
-// eslint-disable-next-line object-curly-newline
-export { API_URL, getBooks, createBook, editBook, deleteBook };
+export {
+  API_URL,
+  getBooks,
+  createBook,
+  editBook,
+  deleteBook,
+};

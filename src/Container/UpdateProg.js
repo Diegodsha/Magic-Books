@@ -1,14 +1,11 @@
 /* eslint-disable no-alert */
-/* eslint-disable react/prop-types */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateBook } from '../Actions/index';
 import { StyledForm } from '../StyledComponents/styles';
-// import { categories } from './ BooksForm';
 
-// eslint-disable-next-line react/prop-types
 const UpdateProg = ({ match }) => {
   const { id } = match.params;
   const books = useSelector((state) => state.bookReducer);
@@ -91,6 +88,10 @@ const UpdateProg = ({ match }) => {
       </StyledForm>
     </>
   );
+};
+
+UpdateProg.propTypes = {
+  match: PropTypes.isRequired,
 };
 
 export default UpdateProg;

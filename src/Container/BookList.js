@@ -1,14 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Book from '../Components/Book';
-import {
-  filterAction,
-  removeBook,
-  fetchBooks,
-} from '../Actions/index';
+import { filterAction, removeBook, fetchBooks } from '../Actions/index';
 import CategoryFilter from '../Components/CategoryFilter';
 
-const BookList = () => {
+// eslint-disable-next-line react/prop-types
+const BookList = ({ render }) => {
   const books = useSelector((state) => state.bookReducer);
   const dispatch = useDispatch();
   const handleRemoveBook = (book) => {
@@ -19,9 +16,11 @@ const BookList = () => {
     dispatch(filterAction(e.target.value));
   };
 
+  // const fetchBookss = useCallback(() => fetchBooks(), []);
+
   useEffect(() => {
     dispatch(fetchBooks());
-  }, [dispatch]);
+  }, [render]);
 
   return (
     <div className="container-fluid p-2 px-md-5 py-2 py-md-4">
