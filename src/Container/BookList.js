@@ -5,7 +5,7 @@ import { filterAction, removeBook, fetchBooks } from '../Actions/index';
 import CategoryFilter from '../Components/CategoryFilter';
 
 // eslint-disable-next-line react/prop-types
-const BookList = ({ render }) => {
+const BookList = () => {
   const books = useSelector((state) => state.bookReducer);
   const dispatch = useDispatch();
   const handleRemoveBook = (book) => {
@@ -16,11 +16,9 @@ const BookList = ({ render }) => {
     dispatch(filterAction(e.target.value));
   };
 
-  // const fetchBookss = useCallback(() => fetchBooks(), []);
-
   useEffect(() => {
     dispatch(fetchBooks());
-  }, [render]);
+  }, []);
 
   return (
     <div className="container-fluid p-2 px-md-5 py-2 py-md-4">

@@ -1,7 +1,7 @@
 const bookReducer = (state = [], action) => {
   switch (action.type) {
     case 'FETCH_BOOKS':
-      return [...state, ...action.books];
+      return [...action.books];
     case 'CREATE_BOOK':
       return [...state, action.book];
     case 'REMOVE_BOOK':

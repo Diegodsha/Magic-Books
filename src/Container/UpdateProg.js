@@ -62,7 +62,7 @@ const UpdateProg = ({ match }) => {
             max="100"
             className="form-control"
             id="bookProgress"
-            value={Book.title}
+            value={Book.progress}
             placeholder="Book progress"
             required
             onChange={handleChange}
@@ -71,7 +71,7 @@ const UpdateProg = ({ match }) => {
             type="number"
             className="form-control mt-3"
             id="bookChapter"
-            value={Book.author}
+            value={Book.chapter}
             placeholder="Book chapter"
             required
             onChange={handleChange}
